@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Basic Real Time Chat App</title>
+    <meta name="description" content="A basic real time chat app built with Node.js and Socket.io">
+    <meta name="author" content="Benjamin Garcia">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        const port = <%= port %>;
+    </script>
+</head>
+
+<body>
+    <div id="room-container">
+        <% Object.keys(rooms).forEach(room=> { %>
+            <div>
+                <%= room %>
+            </div>
+            <a href="/<%= room %>">Join</a>
+            <% }) %>
+    </div>
+
+    <form action="/room" method="POST">
+        <input name="room" type="text" required>
+        <button type="submit">New Room</button>
+    </form>
+
+    <script defer src="http://localhost:<%= port %>/socket.io/socket.io.js"></script>
+    <script defer src="js/scripts.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Basic Real Time Chat App</title>
+    <meta name="description" content="A basic real time chat app built with Node.js and Socket.io">
+    <meta name="author" content="Benjamin Garcia">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        const roomName = "<%= roomName %>";
+        const port = <%= port %>;
+    </script>
+</head>
+
+<body>
+    <div id="message-container"></div>
+    <form id="send-container">
+        <input type="text" id="message-input">
+        <button type="submit" id="send-button">Send</button>
+    </form>
+    <script defer src="http://localhost:<%= port %>/socket.io/socket.io.js"></script>
+    <script defer src="js/scripts.js"></script>
+</body>
+
+</html>
